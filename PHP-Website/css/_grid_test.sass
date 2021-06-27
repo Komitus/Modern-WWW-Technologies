@@ -1,0 +1,46 @@
+
+#index-gallery
+  margin-top: 20px
+  width: 100%
+  max-width: 740px
+  margin-left: auto
+  margin-right: auto
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-rows: auto
+  grid-gap: 5px
+  grid-template-areas: "img1 img2 img3" "img4 img5 img6" "img7 img8 img9" "img10 img11 img12"
+    
+%gallery-img
+  width: 100%
+  height: 160px
+  max-width: 160px
+  margin-left: auto
+  margin-right: auto
+  background-repeat: none
+  background-size: cover
+  background-position: center
+  cursor: pointer
+
+@for $i from 1 through 12
+  #index-gallery .img#{$i}
+    @extend %gallery-img
+    grid-area: img#{$i}
+    background-image: url("../img/thumbnails/img_#{$i}.jpg")
+
+@media screen and (min-width: 700px)
+  %gallery-img
+    width: 100%
+    height: 300px
+    max-width: 300px
+
+  @for $i from 1 through 12
+    #index-gallery .img#{$i}
+      background-image: url("../img/original/img_#{$i}.jpg")
+
+  #index-gallery div:hover
+    box-shadow: 0px 0px 20px 3px #888888
+    
+  .canvas-container
+    border: 12px solid black
+    

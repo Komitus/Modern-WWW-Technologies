@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+.MathJax { font-size: 1.2em !important; } 
+
+#main-header{
+  text-align: center;
+  background-color:#0d3b73;
+  color: #07b3b6;
+  padding: 20px 20px;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  padding: 5px;
+  background-color: #ddd;
+}
+
+.section-with-bar {
+  padding: 10px 10px;
+  font-family: Helvetica, sans-serif;
+  font-size: large;
+  background-color: white;
+  border: 10px 10px;
+  border-style: solid;
+  border-color: #ddd;
+}
+.section-with-bar h2 {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  border-right: 15px solid;
+  border-left: 15px solid;
+  background-color: #0d3b73;
+  border-color: #07b3b6;
+  font-size: large;
+  margin: -10px -10px;
+}
+

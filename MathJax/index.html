@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="MathJax">
+    <meta name="keywords" content="Programming, Pwr">
+    <meta name="author" content="Adam Niezgoda">
+    <title>Nauka</title>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$','$'], ['\\(','\\)']]
+          },
+          CommonHTML: { linebreaks: { automatic: true } }, 
+            "HTML-CSS": { linebreaks: { automatic: true } }, 
+        SVG: { linebreaks: { automatic: true } }
+        };
+    </script>
+     <script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+</head>
+
+<body>
+    <header id="main-header">
+        <h1>Przykładowe użycie MathJaxa</h1>
+    </header>
+    <section class="section-with-bar">
+        <header>
+            <h2>Równania kwadratowe w postaci ogólnej</h2>
+        </header>
+        <p>
+            <ul style="list-style-type: square">
+                <li>Postać:
+                    $$ ax^2 + bx +c = 0 $$
+                gdzie $ a,b$ i $c$ - to współczynniki liczbowe i dodatkowo $a \ne 0 $
+                </li>
+                <br>
+                
+                <li>Rozwiązanie:</li>
+                <br> Każde równanie kwadratowe można rozwiązać obliczając deltę:
+                $$\Delta = b^2 - 4ac $$
+                <ul style="list-style-type: circle">
+                    <li>
+                        Jeśli $\Delta \gt 0$, to równanie kwadratowe ma dwa rozwiązania:
+                        $$ x_1 = {{-b-\sqrt{\Delta}} \over 2a} $$
+                        $$ x_2 = {{-b+\sqrt{\Delta}} \over 2a} $$
+                    </li>
+                    <li>
+                        Jeśli $\Delta = 0$, to równanie kwadratowe ma jedno Rozwiązanie
+                        $$ x = \frac {-b} {2a} $$
+                    </li>
+                    <li>
+                        Jeśli $\Delta = 0$, to równanie kwadratowe nie ma rozwiązań w zbiorze rzeczywistym
+                    </li>
+                </ul>
+            </ul>
+        </p>
+    </section>
+
+    <section class="section-with-bar">
+        <header>
+            <h2>Zasada właczeń i wyłączeń</h2>
+        </header>
+        <p>
+           <b>- reguła kombinatoryczna, pozwalająca na określenie liczby elementów skończonej sumy mnogościowej skończonych zbiorów.</b>
+           <h3>Twierdzenie</h3>
+        </p>
+        <p style = "overflow: auto">
+            Niech $ A_1, A_2 \dots A_n$ będą dowolnymi skończonymi zbiorami zaś $i, j, k \in \{ 1,\dots, n \} $. Wówczas:
+            $$ \left| \bigcup_{i=1}^{n} A_i \right| = \sum_{i=1}^{n} \mid A_{i} \mid - \sum_{i,j : i \lt j} \mid A_{i} \cap A_{j} \mid
+            + \sum_{i,j,j : i \lt j \lt k} \mid A_{i} \cap A_{j} \cap A_{k} \mid - \dots + (-1)^{n-1} \mid A_{1} \cap \dots \cap A_{n}\mid, $$
+            gdzie $ \mid A_{k} \mid $ oznacza moc zbioru $A_{k}$ 
+        </p>
+    </section>
+
+</body>
+
+</html>

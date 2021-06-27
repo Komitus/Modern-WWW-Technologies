@@ -1,0 +1,195 @@
+@use "grid_test"
+
+$font-stack: Helvetica, sans-serif
+$main-color:#0d3b73
+$nav-color: #333
+
+//in case i wat to add next site with 3 articles
+@mixin do-flex($direction)
+  flex-direction: $direction
+  display: flex
+  flex-wrap: wrap
+  align-items: stretch
+
+*
+  box-sizing: border-box
+
+body
+  font-family: $font-stack
+  padding: 5px
+  background-color: #ddd
+
+header
+  padding: 20px
+  text-align: center
+  background-color: $main-color
+  background-image: url("../img/bg.jpg")
+  h1
+    font-size: 50px
+    color: $nav-color
+  p
+    font-family: $font-stack
+    color: #ddd
+    font-size: 25px
+    text-shadow: 2px 2px 4px #000000
+    text-transform: uppercase
+    
+#logo 
+  display: none
+  float: left
+  width: 138px
+  height: 180px
+  padding-bottom: 15px
+
+nav 
+  overflow: hidden
+  background-color: $nav-color
+
+#menu_options 
+  display: none
+  a:hover
+    color: black
+    background-color: #ddd
+  a
+    display: block
+    color: #f2f2f2
+    text-align: center
+    padding: 14px 16px
+    text-decoration: none
+  &.show
+    display: block
+
+.line_in_button
+  display: block
+  min-height: 5px
+  min-width: 100%
+  background-color: #fff
+
+#hamburger
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding-bottom: 10px
+  padding-top: 10px
+  padding-right: 10px
+  padding-left: 0
+  color: #fff
+  background-color: transparent
+  margin-right: 0
+  margin-left: auto
+  min-height: 45px
+  min-width: 45px
+  border: 0
+
+#photo_of_me 
+  min-width: 200px
+  min-height: 200px
+  max-width: 100%
+  margin: 0px 20px 15px 0px
+
+#start_article 
+  background-color: white
+  padding: 20px
+  margin-top: 20px
+  font-family: $font-stack
+  overflow: auto
+
+footer 
+  padding: 4px 4px
+  text-align: center
+  background-color: rgba(255, 255, 255, 0.883)
+  margin-bottom: 2px
+  position: relative
+  margin-top: 15px
+  font-family: 'Raleway', sans-serif
+  
+@media screen and (min-width:600px)
+  #logo
+    display: block
+  #photo_of_me
+    float: left
+    max-width: 250px
+    max-height: 250px
+  .science_articles
+    height: 100%
+    @include do-flex('row')
+  .article-with-bar
+    flex-basis: 50%
+  .gallery-elem
+    flex-basis: 50%
+  #menu_options
+    display: block
+  #hamburger
+    display: none
+
+@media screen and (min-width : 900px)
+
+  .article-with-bar
+     flex-basis: 33.3%
+  .gallery-elem
+    flex-basis: 25%
+  #hamburger
+    display: none
+  #menu_options
+    display: flex
+  
+/*science*/
+      
+.article-with-bar
+  padding: 10px 10px
+  font-family: $font-stack
+  font-size: large
+  background-color: white
+  border: 10px 10px 
+  border-style: solid
+  border-color: #ddd
+  h2
+    display: block
+    color: #f2f2f2
+    text-align: center
+    padding: 15px 15px
+    text-decoration: none
+    border-right: 15px solid
+    border-left: 15px solid
+    background-color: $main-color
+    border-color: #07b3b6
+    font-size: large
+    margin: -10px -10px
+
+.code_for_projects 
+  white-space: pre-wrap
+  word-wrap: break-word
+  color: #0a95d6d5
+  overflow: auto
+        
+.img_in_article
+  width: 100%
+  height: auto
+
+  /* hobby */   
+.gallery-elem 
+  img
+    width: 100%
+    border: 30px 30px
+    border-style: groove
+    border-color: $main-color
+    vertical-align: middle
+    max-width: 100%
+      
+.gallery
+  @include do-flex(row)
+
+#article-in-hobby
+  white-space: pre-wrap
+  word-wrap: break-word
+  color: #e4d01dd5
+  background-color: #463e3e
+  padding: 10px
+
+#menu_options
+  div 
+    display: flex
+    margin-left: auto
+    margin-right: 0px
+    background-color: purple
+    flex-direction: row
